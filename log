@@ -162,3 +162,18 @@ Wed 29 Mar 2023 10:52:17 PM UTC:
  tests:  16|0
 total_score: 70/70
 d546cf3
+Wed 29 Mar 2023 11:05:33 PM UTC: 
+ arraylist.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:5:
+arraylist.c: In function ‘clean’:
+arraylist.c:87:8: error: ‘i’ undeclared (first use in this function)
+   87 |   for (i = 0; i < l->size; i++) {
+      |        ^
+arraylist.c:87:8: note: each undeclared identifier is reported only once for each function it appears in
+arraylist.c:88:13: error: ‘ArrayList’ {aka ‘struct ArrayList’} has no member named ‘dato’; did you mean ‘data’?
+   88 |     free(l->dato[i]);
+      |             ^~~~
+      |             data
+Compilation failed
+e0a881e
