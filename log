@@ -2,3 +2,40 @@ mi., 15 de feb. de 2023 12:35:23:
  tests:  0|6
 total_score: 0/70
 7964391
+Wed 29 Mar 2023 09:40:10 PM UTC: 
+ arraylist.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:5:
+arraylist.c: In function ‘createList’:
+arraylist.c:14:63: error: expected ‘)’ before ‘;’ token
+   14 |   ArrayList *local = (ArrayList*) malloc(2 * sizeof(ArrayList);
+      |                                         ~                     ^
+      |                                                               )
+arraylist.c:20:1: error: expected ‘,’ or ‘;’ before ‘}’ token
+   20 | }
+      | ^
+test.c:411:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  411 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:434:1: error: expected declaration or statement at end of input
+  434 | }
+      | ^
+test.c:8:6: error: unused variable ‘msg’ [-Werror=unused-variable]
+    8 | char msg[300];
+      |      ^~~
+In file included from test.c:5:
+arraylist.c:14:14: error: unused variable ‘local’ [-Werror=unused-variable]
+   14 |   ArrayList *local = (ArrayList*) malloc(2 * sizeof(ArrayList);
+      |              ^~~~~
+test.c:435: error: control reaches end of non-void function [-Werror=return-type]
+At top level:
+test.c:411:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  411 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+In file included from test.c:5:
+arraylist.c:38:5: error: ‘get_size’ defined but not used [-Werror=unused-function]
+   38 | int get_size(ArrayList * l){
+      |     ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9e46421
