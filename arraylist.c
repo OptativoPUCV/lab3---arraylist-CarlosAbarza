@@ -11,11 +11,12 @@ typedef struct ArrayList {
 } ArrayList;
 
 ArrayList *createList(void) {
-  ArrayList *local = (ArrayList*) malloc(2 * sizeof(ArrayList));
+  ArrayList *local = (ArrayList*) malloc(sizeof(ArrayList));
   if (local == NULL) return NULL;
+  local->data = calloc(2, sizeof(void));
+  if (local->data == NULL) return NULL;
   local->capacity = 2;
   local->size = 0;
-  local->data = calloc(1, sizeof(void));
   return local;
 }
 
