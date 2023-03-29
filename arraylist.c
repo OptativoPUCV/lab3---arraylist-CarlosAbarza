@@ -85,7 +85,7 @@ void clean(ArrayList * l){
   l = createList();*/
 
   for (i = 0; i < l->size; i++) {
-    free(l->dato[i]);
+    free(l->data[i]);
   }
   free(l);
   l = createList();
