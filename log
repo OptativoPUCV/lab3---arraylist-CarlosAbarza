@@ -67,3 +67,13 @@ arraylist.c:26:16: error: expected expression before ‘)’ token
       |                ^
 Compilation failed
 5dc3466
+Wed 29 Mar 2023 09:48:34 PM UTC: 
+ arraylist.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+arraylist.c: In function ‘append’:
+arraylist.c:26:16: error: expected expression before ‘)’ token
+   26 |     l->data = ();
+      |                ^
+Compilation failed
+c7d66eb
