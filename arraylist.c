@@ -13,7 +13,7 @@ typedef struct ArrayList {
 ArrayList *createList(void) {
   ArrayList *local = (ArrayList*) malloc(sizeof(ArrayList));
   if (local == NULL) return NULL;
-  local->data = calloc(2, sizeof(void));
+  local->data = (void*) calloc(2, sizeof(void*));
   if (local->data == NULL) return NULL;
   local->capacity = 2;
   local->size = 0;
@@ -21,7 +21,10 @@ ArrayList *createList(void) {
 }
 
 void append(ArrayList * l, void * data){
-
+  l->size++;
+  if (l->size == l->capacity) {
+    l->data = ()
+  }
 }
 
 void push(ArrayList * l, void * data, int i){
