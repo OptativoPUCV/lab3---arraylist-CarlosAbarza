@@ -21,10 +21,16 @@ ArrayList *createList(void) {
 }
 
 void append(ArrayList * l, void * data){
-  l->size++;
   if (l->size == l->capacity) {
-    l->data = (void*) realloc(l->data, sizeof(void*));
+    l->data = (void*) realloc(l->data, l->capacity * 2);
+    if (l->data == NULL) {
+      printf("Error al reservar memoria");
+      return;
+    }
+    l->capacity *= 2;
   }
+  l->data[l->size] = data;
+  l->size++;
 }
 
 void push(ArrayList * l, void * data, int i){
