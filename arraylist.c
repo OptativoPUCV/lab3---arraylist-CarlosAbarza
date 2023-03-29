@@ -22,7 +22,7 @@ ArrayList *createList(void) {
 
 void append(ArrayList * l, void * data){
   if (l->size == l->capacity) {
-    l->data = (void*) realloc(l->data, l->capacity * 2);
+    l->data = (void*) realloc(l->data, l->capacity * 2 * sizeof(void*));
     if (l->data == NULL) {
       printf("Error al reservar memoria");
       return;
