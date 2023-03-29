@@ -34,7 +34,20 @@ void append(ArrayList * l, void * data){
 }
 
 void push(ArrayList * l, void * data, int i){
-
+  if (i >l->size) return;
+  if (l->size == l->capacity) {
+    l->data = (void*) realloc(l->data, l->capacity * 2 * sizeof(void*));
+    if (l->data == NULL) {
+      printf("Error al reservar memoria");
+      return;
+    }
+    l->capacity *= 2;
+  }
+  for (int j = l->size - 1; j > i; j--) {
+    l->data[j] = l->data[j-1];
+  }
+  l->data[i] = data;
+  l->size++;
 }
 
 void* pop(ArrayList * l, int i){
